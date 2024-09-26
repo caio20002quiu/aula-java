@@ -1,0 +1,20 @@
+class Funcionario {
+    String nome;
+    double salario;
+    String cargo;
+
+    public Funcionario(String nome, double salario, String cargo) {
+        this.nome = nome;
+        this.salario = salario;
+        this.cargo = cargo;
+    }
+
+    public double calcularSalarioLiquido(double taxaImposto) {
+        return salario - (salario * taxaImposto / 100);
+    }
+
+    public static void main(String[] args) {
+        Funcionario f = new Funcionario("Maria", 5000.0, "Gerente");
+        System.out.println("Salário líquido: " + f.calcularSalarioLiquido(15));
+    }
+}
