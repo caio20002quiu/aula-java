@@ -1,0 +1,25 @@
+class Produto {
+    String nome;
+    double preco;
+    int quantidadeEstoque;
+
+    public Produto(String nome, double preco, int quantidadeEstoque) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+    public double calcularValorEstoque() {
+        return preco * quantidadeEstoque;
+    }
+
+    public boolean estaDisponivel() {
+        return quantidadeEstoque > 0;
+    }
+
+    public static void main(String[] args) {
+        Produto p = new Produto("Laptop", 2500.0, 10);
+        System.out.println("Valor em estoque: " + p.calcularValorEstoque());
+        System.out.println("Disponível: " + p.estaDisponivel());
+    }
+}
