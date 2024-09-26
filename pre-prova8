@@ -1,0 +1,31 @@
+class Carro {
+    String marca;
+    String modelo;
+    double velocidadeAtual;
+
+    public Carro(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.velocidadeAtual = 0;
+    }
+
+    public void acelerar(double incremento) {
+        velocidadeAtual += incremento;
+    }
+
+    public void frear(double decremento) {
+        velocidadeAtual = Math.max(0, velocidadeAtual - decremento);
+    }
+
+    public void exibirVelocidade() {
+        System.out.println("Velocidade atual: " + velocidadeAtual + " km/h");
+    }
+
+    public static void main(String[] args) {
+        Carro c = new Carro("Toyota", "Corolla");
+        c.acelerar(60);
+        c.exibirVelocidade();
+        c.frear(20);
+        c.exibirVelocidade();
+    }
+}
